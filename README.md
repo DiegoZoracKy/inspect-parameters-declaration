@@ -18,20 +18,21 @@ npm install inspect-parameters-declaration -g
 ## Usage
 
 `inspectParameters(source);`
-`getAllParametersNames(source);`
+
+`getParametersNames(source);`
 
 Where **source** is a *function* reference or a string containing the parameters declaration (e.g. 'a = "z, b = [1,2,3], c, {d,e: {f}, g} = {}')
 
 ```javascript
-const { getAllParametersNames, inspectParameters } = require('inspect-parameters-declaration');
+const { getParametersNames, inspectParameters } = require('inspect-parameters-declaration');
 
 const testFunction = (a = "z", b = [1,2,3], c, {d,e: {f}, g} = {}) => console.log("noop");
 
-const allParametersNames = getAllParametersNames(testFunction);
+const parametersNames = getParametersNames(testFunction);
 const inspectedParameters = inspectParameters(testFunction);
 
 //////////////////////////////////////
-// allParametersNames :: RESULT     //
+// parametersNames :: RESULT     //
 //                                  //
 // [ "a", "b", "c", "d", "f", "g" ] //
 //////////////////////////////////////

@@ -1,17 +1,17 @@
 'use strict';
 
 const assert = require('assert');
-const { inspectParameters, getAllParametersNames } = require('../');
+const { inspectParameters, getParametersNames } = require('../');
 
 const { testsParametersNames, testsInspectParameters } = getTestData();
 
-describe('getAllParametersNames', function() {
+describe('getParametersNames', function() {
 	const tests = testsParametersNames;
 
 	Object.keys(tests).forEach(key => {
 		describe(`${key}`, function() {
 			it(`Must match the expected parameters name`, function() {
-				const allParametersNames = getAllParametersNames(tests[key].input);
+				const allParametersNames = getParametersNames(tests[key].input);
 				assert.deepEqual(allParametersNames, tests[key].expectedResult);
 			});
 		});
