@@ -1,6 +1,6 @@
 # inspect-parameters-declaration
 
-[![Build Status](https://api.travis-ci.org/DiegoZoracKy/inspect-parameters-declaration.svg)](https://travis-ci.org/DiegoZoracKy/inspect-parameters-declaration)
+[![Build Status](https://api.travis-ci.org/DiegoZoracKy/inspect-parameters-declaration.svg)](https://travis-ci.org/DiegoZoracKy/inspect-parameters-declaration) [![npm](https://img.shields.io/npm/v/inspect-parameters-declaration.svg)]() [![npm](https://img.shields.io/npm/l/inspect-parameters-declaration.svg)]()
 
 Inspects function's parameters declaration and returns information about it (e.g. names, default values, if needs destructuring, destructured parameters names and default values).
 
