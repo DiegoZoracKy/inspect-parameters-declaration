@@ -240,7 +240,7 @@ function getTestData() {
 
 		stringParameterDeclaration: {
 			input: `[p1,[p2 = '',[p3]]]=[]`,
-			expectedResult: {
+			expectedResult: [{
 			    "parameter": "[p1,[p2 = '',[p3]]]",
 			    "defaultValue": "[]",
 			    "expectsDestructuring": true,
@@ -259,12 +259,12 @@ function getTestData() {
 			            "declaration": "p3"
 			        }
 			    ]
-			}
+			}]
 		},
 
 		functionParameterDeclaration: {
 			input: function ([p1,[p2 = '',[p3]]]=[]) { return; },
-			expectedResult: {
+			expectedResult: [{
 			    "parameter": "[p1,[p2 = '',[p3]]]",
 			    "defaultValue": "[]",
 			    "expectsDestructuring": true,
@@ -283,7 +283,7 @@ function getTestData() {
 			            "declaration": "p3"
 			        }
 			    ]
-			}
+			}]
 		}
 	};
 
