@@ -31,50 +31,49 @@ const testFunction = (a = "z", b = [1,2,3], c, {d,e: {f}, g} = {}) => console.lo
 const parametersNames = getParametersNames(testFunction);
 const inspectedParameters = inspectParameters(testFunction);
 
-//////////////////////////////////////
-// parametersNames :: RESULT     //
-//                                  //
-// [ "a", "b", "c", "d", "f", "g" ] //
-//////////////////////////////////////
+///////////////////////////////
+// parametersNames :: RESULT //
+///////////////////////////////
+// [ "a", "b", "c", "d", "f", "g" ]
 
-//////////////////////////////////////////////////
-// inspectedParameters :: RESULT                //
-//                                              //
-// [                                            //
-//     {                                        //
-//         "parameter": "a",                    //
-//         "defaultValue": "z",                 //
-//         "declaration": "a = \"z\""           //
-//     },                                       //
-//     {                                        //
-//         "parameter": "b",                    //
-//         "defaultValue": "[1,2,3]",           //
-//         "declaration": "b = [1,2,3]"         //
-//     },                                       //
-//     {                                        //
-//         "parameter": "c",                    //
-//         "declaration": "c"                   //
-//     },                                       //
-//     {                                        //
-//         "parameter": "{d,e: {f}, g}",        //
-//         "defaultValue": "{}",                //
-//         "expectsDestructuring": true,        //
-//         "declaration": "{d,e: {f}, g} = {}", //
-//         "destructuredParameters": [          //
-//             {                                //
-//                 "parameter": "d",            //
-//                 "declaration": "d"           //
-//             },                               //
-//             {                                //
-//                 "parameter": "f",            //
-//                 "declaration": "f"           //
-//             },                               //
-//             {                                //
-//                 "parameter": "g",            //
-//                 "declaration": "g"           //
-//             }                                //
-//         ]                                    //
-//     }                                        //
-// ]                                            //
-//////////////////////////////////////////////////
+
+///////////////////////////////////
+// inspectedParameters :: RESULT //
+///////////////////////////////////
+// [
+//     {
+//         "parameter": "a",
+//         "defaultValue": "z",
+//         "declaration": "a = \"z\""
+//     },
+//     {
+//         "parameter": "b",
+//         "defaultValue": "[1,2,3]",
+//         "declaration": "b = [1,2,3]"
+//     },
+//     {
+//         "parameter": "c",
+//         "declaration": "c"
+//     },
+//     {
+//         "parameter": "{d,e: {f}, g}",
+//         "defaultValue": "{}",
+//         "expectsDestructuring": true,
+//         "declaration": "{d,e: {f}, g} = {}",
+//         "destructuredParameters": [
+//             {
+//                 "parameter": "d",
+//                 "declaration": "d"
+//             },
+//             {
+//                 "parameter": "f",
+//                 "declaration": "f"
+//             },
+//             {
+//                 "parameter": "g",
+//                 "declaration": "g"
+//             }
+//         ]
+//     }
+// ]
 ```
