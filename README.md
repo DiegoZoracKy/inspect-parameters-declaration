@@ -23,7 +23,7 @@ npm install inspect-parameters-declaration -g
 
  * **source** is a *function* reference or a string containing the parameters declaration (e.g. 'a = "z, b = [1,2,3], c, {d,e: {f}, g} = {}')
 
-`getParametersNames(inspectedParameters);`
+`getParametersNamesFromInspection(inspectedParameters);`
 
 * **inspectedParameters** expects the result from `inspectParameters(source)`;
 
