@@ -63,9 +63,9 @@ function getTestData() {
 			expectedResult: []
 		},
 
-		functionExpectingDestructuring: {
-			input: function fn({ a } = {}, b, [d, e, z = "ZZ"] = [1, 2]) {},
-			expectedResult: ['a', 'b', 'd', 'e', 'z']
+		functionExpectingDestructuringPlusRestParameter: {
+			input: function fn({ a } = {}, b, [d, e, z = "ZZ"] = [1, 2], ...aRestParameter) {},
+			expectedResult: ['a', 'b', 'd', 'e', 'z', 'aRestParameter']
 		},
 
 		staticMethodFromClass: {
@@ -170,7 +170,7 @@ function getTestData() {
 		},
 
 		functionMultipleParametersDeclaration: {
-			input: ([p1 = 1,[p2 = 'P2DEF',[p3]]]=[], [a,b], { z, k, zk: {zz} }={}, zkzkz = 111, [zk,zzk,zzzk],iowu) => {},
+			input: ([p1 = 1,[p2 = 'P2DEF',[p3]]]=[], [a,b], { z, k, zk: {zz} }={}, zkzkz = 111, [zk,zzk,zzzk],iowu, ...aRestParameter) => {},
 			expectedResult: [{
 				"parameter": "[p1 = 1,[p2 = 'P2DEF',[p3]]]",
 				"defaultValue": "[]",
@@ -235,6 +235,10 @@ function getTestData() {
 			}, {
 				"parameter": "iowu",
 				"declaration": "iowu"
+			}, {
+				"parameter": "aRestParameter",
+				"isRestParameter": true,
+				"declaration": "...aRestParameter"
 			}]
 		},
 
@@ -265,24 +269,20 @@ function getTestData() {
 		functionParameterDeclaration: {
 			input: function ([p1,[p2 = '',[p3]]]=[]) { return; },
 			expectedResult: [{
-			    "parameter": "[p1,[p2 = '',[p3]]]",
-			    "defaultValue": "[]",
-			    "expectsDestructuring": true,
-			    "declaration": "[p1,[p2 = '',[p3]]]=[]",
-			    "destructuredParameters": [
-			        {
-			            "parameter": "p1",
-			            "declaration": "p1"
-			        },
-			        {
-			            "parameter": "p2",
-			            "declaration": "p2 = ''"
-			        },
-			        {
-			            "parameter": "p3",
-			            "declaration": "p3"
-			        }
-			    ]
+				"parameter": "[p1,[p2 = '',[p3]]]",
+				"defaultValue": "[]",
+				"expectsDestructuring": true,
+				"declaration": "[p1,[p2 = '',[p3]]]=[]",
+				"destructuredParameters": [{
+					"parameter": "p1",
+					"declaration": "p1"
+				}, {
+					"parameter": "p2",
+					"declaration": "p2 = ''"
+				}, {
+					"parameter": "p3",
+					"declaration": "p3"
+				}]
 			}]
 		}
 	};

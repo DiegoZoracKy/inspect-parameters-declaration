@@ -30,7 +30,7 @@ npm install inspect-parameters-declaration -g
 ```javascript
 const { getParametersNames, inspectParameters } = require('inspect-parameters-declaration');
 
-const testFunction = (a = "z", b = [1,2,3], c, {d,e: {f}, g} = {}) => console.log("noop");
+const testFunction = (a = "z", b = [1,2,3], c, {d,e: {f}, g} = {}, ...theArgs) => console.log("noop");
 
 const parametersNames = getParametersNames(testFunction);
 const inspectedParameters = inspectParameters(testFunction);
@@ -38,7 +38,7 @@ const inspectedParameters = inspectParameters(testFunction);
 ///////////////////////////////
 // parametersNames :: RESULT //
 ///////////////////////////////
-// [ "a", "b", "c", "d", "f", "g" ]
+// [ "a", "b", "c", "d", "f", "g", "theArgs" ]
 
 
 ///////////////////////////////////
@@ -78,6 +78,11 @@ const inspectedParameters = inspectParameters(testFunction);
 //                 "declaration": "g"
 //             }
 //         ]
+//     },
+//     {
+//         "parameter": "theArgs",
+//         "isRestParameter": true,
+//         "declaration": "...theArgs"
 //     }
 // ]
 ```
