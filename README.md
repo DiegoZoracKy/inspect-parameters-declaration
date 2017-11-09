@@ -14,6 +14,9 @@ npm install inspect-parameters-declaration
 ```bash
 npm install inspect-parameters-declaration -g
 ```
+```bash
+npx inspect-parameters-declaration --help
+```
 
 ## Usage
 

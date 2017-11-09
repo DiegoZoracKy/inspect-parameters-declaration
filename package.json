@@ -1,6 +1,6 @@
 {
   "name": "inspect-parameters-declaration",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Inspects function's parameters declaration and returns information about it (e.g. names, default values, if needs destructuring, destructured parameters names and default values)",
   "main": "./lib/inspect-parameters-declaration.js",
   "bin": "./bin/cli.js",
