@@ -38,6 +38,11 @@ function getTestData() {
 			expectedResult: ['param']
 		},
 
+		asyncArrowWithParenthesis: {
+			input: async (param) => console.log(param),
+			expectedResult: ['param']
+		},
+
 		arrowWithParenthesis: {
 			input: (param) => console.log(param),
 			expectedResult: ['param']
@@ -58,6 +63,11 @@ function getTestData() {
 			expectedResult: ['z', 'k']
 		},
 
+		asyncSimpleFunction: {
+			input: async function fn(z, k) {},
+			expectedResult: ['z', 'k']
+		},
+
 		simpleFunctionWithoutParameters: {
 			input: function fn() {},
 			expectedResult: []
@@ -72,6 +82,18 @@ function getTestData() {
 			input: (() => {
 				class fn {
 					static staticMethod(b, l, a = 'A') {
+						console.log(`bla bla`);
+					}
+				}
+				return fn.staticMethod;
+			})(),
+			expectedResult: ['b', 'l', 'a']
+		},
+
+		asyncStaticMethodFromClass: {
+			input: (() => {
+				class fn {
+					static async staticMethod(b, l, a = 'A') {
 						console.log(`bla bla`);
 					}
 				}
