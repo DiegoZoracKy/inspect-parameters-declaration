@@ -7,6 +7,10 @@
   "scripts": {
     "test": "mocha ./test/main.test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DiegoZoracKy/inspect-parameters-declaration.git"
+  },
   "author": {
     "name": "Diego ZoracKy",
     "email": "diego.zoracky@gmail.com",
